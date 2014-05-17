@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cloudaice/igener.svg?branch=master)](https://travis-ci.org/cloudaice/igener)
+
 # Id生成器
 
 ### 产生原因
