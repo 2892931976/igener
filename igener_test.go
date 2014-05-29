@@ -8,6 +8,13 @@ import (
 	"time"
 )
 
+func BenchmarkIGener(b *testing.B) {
+	ig := NewIGener()
+	for n := 0; n < b.N; n++ {
+		<-ig
+	}
+}
+
 func TestIGener(t *testing.T) {
 	ig := NewIGener()
 	var id string
