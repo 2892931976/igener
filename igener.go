@@ -2,7 +2,7 @@ package igener
 
 import (
 	"encoding/binary"
-	"fmt"
+	"encoding/hex"
 	"hash/crc32"
 	"os"
 	"time"
@@ -64,7 +64,7 @@ func (ig *IGener) timeIncEncode() ([4]byte, [3]byte) {
 	return timeEncode, incEncode
 }
 
-func (ig *IGener) generUniqueId(){
+func (ig *IGener) generUniqueId() {
 	var uniqueId [12]byte
 	for {
 		timeEncode, incEncode := ig.timeIncEncode()
@@ -89,6 +89,7 @@ func (ig *IGener) generUniqueId(){
 			i++
 		}
 
-		ig.idChan <- fmt.Sprintf("%x", uniqueId)
+		ig.idChan <- hex.EncodeToString(uniqueId[:])
+
 	}
 }
