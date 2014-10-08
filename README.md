@@ -24,3 +24,7 @@
         id := <-ig
         fmt.Println(id)
     }
+
+### 安装
+
+    go get "github.com/cloudaice/igener"
